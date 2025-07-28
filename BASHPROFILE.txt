@@ -1,0 +1,73 @@
+#===============================================================================
+# .bash_profile - Garry L. Riveron
+#===============================================================================
+# Modified version by neo ctopher!!
+# Christopher's bash profile.
+# From Gary Riveron. . . . I think. Very old file from WB.
+# .bashrc file
+#===============================================================================
+
+if [ "$PATHSET" == "" ]
+then
+     PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:$HOME/bin:$HOME/bin/epub:$HOME/xbin:/usr/local/mysql/bin/:$HOME/bin/scripts:$HOME/bin/perl_Logs/:$HOME/bin/lotto:/Applications/MySQLWorkbench.app.Contents/MacOS/
+    MANPATH=/usr/local/share/man/:/usr/share/man:/usr/man:/usr/local/man:$MANPATH:$HOME/man
+    export PATH MANPATH  #PATHSET CDPATH MANPATH 
+    PATHSET="Yes"
+fi
+
+WNHOME=/Users/ctopher/WNHOME
+
+export WNHOME
+
+HISTSIZE=5000
+HISTFILESIZE=5000
+
+
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+
+set_prompt() {
+  if [[ "$ROLE" == "neo" ]]; then
+	PS1="[Wake Up Neo!]:"
+	echo `uptime`
+  elif [[ "$ROLE" == "misfit" ]]; then
+	PS1="[#\!/\u@Misfit/]:]"
+  else
+    export PS1="\u@\h:\w\$ "
+  fi
+}
+
+
+
+
+
+if [[ -z "$ROLE" ]]; then
+ROLE=neo
+
+fi
+
+
+
+set_prompt
+
+# echo `uptime`
+
+
+
+export MYSQL_PS1="(\u@\h) [\d]> "
+
+
+alias l='ls -al'
+alias ll='ls -FGa'
+alias lll='ls -FGal'
+alias cls='digital_noise.pl;clear;ls -FGlh'
+alias cls2='cls;todays.posts.pl;wtsum'
+alias cls3='cls;ls bin'
+alias xi='Write-it.pl'
+alias wtsum='print-stats.pl'
+alias u='uptime'
+alias xloop='xloop'
+alias 42='42-dates.pl'
+alias ghost='echo "You are the ghost in the code, aren’t you?"'
+
+
